@@ -15,7 +15,7 @@
 
 ### Arduino IDE (Windows 10 Installation)
 
-  - Go to the [Arduino IDE official website](https://www.arduino.cc/en/Main/Software), in the "Download the Arduino IDE" section, choose the Windows installer option.
+  - Go to the [Arduino IDE official website](https://www.arduino.cc/en/Main/Software), in the "Download the Arduino IDE" section, choose the Windows installer option
 
 ![Arduino IDE installer download](docs/ArduinoIDE.png)
 
@@ -45,7 +45,7 @@ If the Arduino IDE doesn't launch properly, contact the Arduino IDE development 
 
 We're going to use Arduino IDE's Board Manager to install the Espressif arduino-32 libraries. 
 
-  - Open the Arduino IDE, go to File->Preferences , then paste this in "Board Manager Additional URL's" : [https://dl.espressif.com/dl/package_esp32_index.json](https://dl.espressif.com/dl/package_esp32_index.json) ; then click "OK"
+  - Open the Arduino IDE, go to File->Preferences , then paste this in "Board Manager Additional URL's": [https://dl.espressif.com/dl/package_esp32_index.json](https://dl.espressif.com/dl/package_esp32_index.json) ; then click "OK"
   
   ![Arduino IDE Preferences](docs/ArduinoIDE-Preferences.png)
   
