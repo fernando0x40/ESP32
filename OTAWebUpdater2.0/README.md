@@ -5,7 +5,7 @@
 ## Contents
 
   - [Installation Instructions](#installation-instructions)
-    + [Arduino IDE](#arduino-ide-windows-installation)
+    + [Arduino IDE](#arduino-ide-windows-10-installation)
     + [Espressif arduino-esp32 libraries](#espressif-arduino-esp32-libraries)
   - [Testing](#testing)
   - [Adding Functionalities](#adding-functionalities)
@@ -13,10 +13,32 @@
    
 ## Installation Instructions
 
-### Arduino IDE (Windows Installation)
+### Arduino IDE (Windows 10 Installation)
 
 Go to the [Arduino IDE official website](https://www.arduino.cc/en/Main/Software), in the "Download the Arduino IDE" section, choose the Windows installer option.
 
 ![Arduino IDE installer download](docs/ArduinoIDE.png)
+
+Launch the Installer, agree with the License Agreement
+
+![Arduino IDE License Agreement](docs/ArduinoIDE-LicenseAgreement.png)
+
+Leave all the installation options marked then click "Next"
+
+![Arduino IDE Installation Options](docs/ArduinoIDE-InstallOptions.png)
+
+Select an installation folder and click "Install"
+
+![Arduino IDE Installation Folder](docs/ArduinoIDE-InstallationFolder.png)
+
+Wait until the installation is completed then click "Close"
+
+![Arduino IDE Installed](docs/ArduinoIDE-installing.png)
+
+In the Windows 10 search bar, search for "Arduino", launch the .exe found then the Arduino IDE will launch
+
+![Arduino IDE Launcher](docs/ArduinoIDE-Launching.png) ![Arduino IDE Default Sketch](docs/ArduinoIDE-DefaultSketch.png)
+
+If the Arduino IDE doesn't launch properly, contact the Arduino IDE development team or community with [one of these methods](https://www.arduino.cc/en/Main/ContactUs).
 
 ### Espressif arduino-esp32 libraries
