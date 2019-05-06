@@ -8,6 +8,8 @@ const char* host = "esp32";
 const char* ssid = "ESP32-FER0X40";
 const char* password = "13791379";
 
+const int ledPin = 4;
+
 WebServer server(80);
 
 //Check if header is present and correct
@@ -129,11 +131,19 @@ void handleRoot() {
   "<br><br>"
   "<div id='prg'></div>"
   "<br><div id='prgbar'><div id='bar'></div></div><br>"
+  "<input type='button' id='LedONButton' class=btn value='Led ON'>"
+  "<input type='button' id='LedOFFButton' class=btn value='Led OFF'>"
   "<input type='button' id='LogoutButton' class=btn value='Logout'>"
   "<script type='text/javascript'>"
-  "    document.getElementById('LogoutButton').onclick = function () {"
-  "        location.href = '/login?DISCONNECT=YES';"
-  "    };"
+      "document.getElementById('LedOFFButton').onclick = function () {"
+          "location.href = '/?LED=OFF';"
+      "};"
+      "document.getElementById('LedONButton').onclick = function () {"
+          "location.href = '/?LED=ON';"
+      "};"
+      "document.getElementById('LogoutButton').onclick = function () {"
+          "location.href = '/login?DISCONNECT=YES';"
+      "};"
   "</script></form>"
   "<script>"
   "function sub(obj){"
@@ -172,6 +182,23 @@ void handleRoot() {
   server.send(200, "text/html", content);
 }
 
+void handleLedOn(){
+  Serial.println("Enter handleLedOn");
+  String header;
+  if (!is_authentified()) {
+    server.sendHeader("Location", "/login");
+    server.sendHeader("Cache-Control", "no-cache");
+    server.send(301);
+    return;
+  }
+  String content = "<form name=loginForm>"
+  "<h1>ESP32 Login</h1>"
+  "<input name=UPLOAD type=btn> "
+  "<input name=PASSWORD placeholder=Password type=Password> "
+  "<input type=submit onclick=check(this.form) class=btn value=Login></form>" + style;
+  server.send(200, "text/html", content);
+}
+
 //no need authentification
 void handleNotFound() {
   String message = "File Not Found\n\n";
@@ -193,6 +220,8 @@ void handleNotFound() {
  */
 void setup(void) {
   Serial.begin(115200);
+
+  pinMode(ledPin,OUTPUT);
 
   // Connect to WiFi network
   WiFi.begin(ssid, password);
@@ -256,9 +285,19 @@ void setup(void) {
   //ask server to track these headers
   server.collectHeaders(headerkeys, headerkeyssize);
   server.begin();
+  // Add service to MDNS-SD
+  MDNS.addService("http", "tcp", 80);
 }
 
 void loop(void) {
   server.handleClient();
   delay(1);
+  if (server.hasArg("LED")) {
+    if (server.arg("LED") == "ON") {
+      digitalWrite(ledPin, LOW);
+    }
+    else if (server.arg("LED") == "OFF") {
+      digitalWrite(ledPin, HIGH);
+    }
+  }
 }

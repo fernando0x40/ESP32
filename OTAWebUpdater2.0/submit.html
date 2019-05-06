@@ -6,8 +6,16 @@
 <br><br>
 <div id='prg'></div>
 <br><div id='prgbar'><div id='bar'></div></div><br>
+<input type='button' id='LedONButton' class=btn value='Led ON'>
+<input type='button' id='LedOFFButton' class=btn value='Led OFF'>
 <input type='button' id='LogoutButton' class=btn value='Logout'>
 <script type="text/javascript">
+    document.getElementById('LedOFFButton').onclick = function () {
+        location.href = '/?LED=OFF';
+    };
+    document.getElementById('LedONButton').onclick = function () {
+        location.href = '/?LED=ON';
+    };
     document.getElementById('LogoutButton').onclick = function () {
         location.href = '/login?DISCONNECT=YES';
     };
