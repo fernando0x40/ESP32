@@ -1,8 +1,20 @@
-<form name=loginForm>
-<h1>ESP32 Login</h1>
-<input name=USERNAME placeholder='User ID'>
-<input name=PASSWORD placeholder='Password' type=Password>
-<input type=submit onclick=check(this.form) class=btn value=Login></form>
+<form action='index.html' method='post' id='home_form'>
+  <input type='button' id='LogoutButton' class='btn' value='Logout'>
+  <input type='button' id='UploadButton' class='btn' value='Upload'>
+  <input type='button' id='LedTestButton' class='btn' value='Led Test'>
+  <input type='button' id='SerialButton' class='btn' value='Serial'>
+  <script type='text/javascript'>
+    document.getElementById('LogoutButton').onclick = function () {
+        location.href = '/?LOGOUT=YES';
+    };
+    document.getElementById('UploadButton').onclick = function () {
+        location.href = '/?UPLOAD=YES';
+    };
+    document.getElementById('LedTestButton').onclick = function () {
+        location.href = '/?LED=YES';
+    };
+  </script>
+</form>
 <style>
   #file-input,
   input{
