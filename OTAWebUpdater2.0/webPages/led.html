@@ -1,7 +1,7 @@
 <form class='' action='index.html' method='post'>
   <input type='button' id='LedState' class='ledbtn' value='LED ON'>
   <input type='button' id='HomeButton' class=btn value='Home'>
-  <input type='button' id='LogoutButton' class=btn value='Logout'>
+  <input type='button' id='LogoutButton' class="logout btn" value='Logout'>
   <script type='text/javascript'>
     var gbutton = '#20e018'
     var rbutton = '#ec1f1f'
@@ -74,10 +74,13 @@
     background:#3498db;
     color:#fff;
     cursor:pointer
-  }
-  .ledbtn{
+  }.btn:hover{
+    background:#20e018;
+  }.ledbtn{
     background:#ec1f1f;
     color:#fff;
     cursor:pointer
+  }.logout:hover{
+    background:#ec1f1f;
   }
 </style>

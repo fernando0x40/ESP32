@@ -7,7 +7,7 @@
 <div id='prg'></div>
 <br><div id='prgbar'><div id='bar'></div></div><br>
 <input type='button' id='HomeButton' class=btn value='Home'>
-<input type='button' id='LogoutButton' class=btn value='Logout'>
+<input type='button' id='LogoutButton' class="logout btn" value='Logout'>
 <script type='text/javascript'>
     document.getElementById('LogoutButton').onclick = function () {
         location.href = '/login?DISCONNECT=YES';
@@ -92,5 +92,9 @@ error: function (a, b, c) {
     background:#3498db;
     color:#fff;
     cursor:pointer
+  }.btn:hover{
+    background:#20e018;
+  }.logout:hover{
+    background:#ec1f1f;
   }
 </style>
