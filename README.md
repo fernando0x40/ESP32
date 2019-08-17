@@ -1,7 +1,7 @@
-AOT WebServer for ESP32
+# IOT Projects with ESP32
 =======================
 
-### Project made with [Arduino IDE](https://www.arduino.cc/en/Main/Software) and [Espressif arduino-esp32](https://github.com/espressif/arduino-esp32) libraries.
+### Projects made with [Arduino IDE](https://www.arduino.cc/en/Main/Software) and [Espressif arduino-esp32](https://github.com/espressif/arduino-esp32) libraries.
 
 Contents
 --------
@@ -10,8 +10,6 @@ Contents
 	-	[Arduino IDE](#arduino-ide-windows-10-installation)
 	-	[Espressif arduino-esp32 libraries](#espressif-arduino-esp32-libraries)
 -	[Testing](#testing)
--	[Adding Functionalities](#adding-functionalities)
-	-	[Adding More Pages](#adding-more-pages)
 
 Installation Instructions
 -------------------------
