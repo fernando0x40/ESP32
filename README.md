@@ -65,5 +65,5 @@ Projects
 
 ### OTA WebUpdater 2.0
 
-The default WebUpdater avaliable at Espressif libraries for Arduino IDE is a bare bones tool that serves it's function of providing a starting point to development.<br>
-In this project, I inserted some features that may provide a better experience developing OTA through a Network.
+The default WebUpdater avaliable at Espressif libraries for Arduino IDE is a bare bones tool, that serves it's function of providing a starting point to development.<br>
+In this project, I developed some features that may provide a better experience developing OTA through a Network.
