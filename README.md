@@ -9,7 +9,9 @@ Contents
 -	[Installation Instructions](#installation-instructions)
 	-	[Arduino IDE](#arduino-ide-windows-10-installation)
 	-	[Espressif arduino-esp32 libraries](#espressif-arduino-esp32-libraries)
--	[Testing](#testing)
+	-	[Testing](#testing)
+- [Projects](#projects)
+	- [OTA WebUpdater 2.0](ota-webupdater-2.0)
 
 Installation Instructions
 -------------------------
@@ -57,3 +59,11 @@ We're going to use Arduino IDE's Board Manager to install the Espressif arduino-
 -	Now, you should be able to select an ESP32 board from the package in Tools->Board
 
 ![Arduino IDE ESP32 Boards](docs/ArduinoIDE-esp32boards.png)
+
+Projects
+--------
+
+### OTA WebUpdater 2.0
+
+The default WebUpdater avaliable at Espressif libraries for Arduino IDE is a bare bones tool that serves it's function of providing a starting point to development.<br>
+In this project, I inserted some features that may provide a better experience developing OTA through a Network.
