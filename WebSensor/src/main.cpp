@@ -17,7 +17,7 @@ int LDRvalor = 0;
 void loop() {
   // put your main code here, to run repeatedly:
   LDRvalor = analogRead(LDR);
-  Serial.println(LDRvalor);
-  Serial.printf("Valor do LDR = %.1f\n", LDRvalor*3.3/4095.0);
-  delay(200);
+
+  Serial.printf("Valor do LDR = %.2f%%\n", 100-(LDRvalor*100/4095.0));
+  delay(30);
 }
