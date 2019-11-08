@@ -1,0 +1,65 @@
+<form action='index.html' method='post' id='home_form'>
+  <input type='button' id='LogoutButton' class="logout btn" value='Logout'>
+  <input type='button' id='UploadButton' class='btn' value='Upload'>
+  <input type='button' id='LedTestButton' class='btn' value='Led Test'>
+  <input type='button' id='SerialButton' class='btn' value='Serial'>
+  <script type='text/javascript'>
+    document.getElementById('LogoutButton').onclick = function () {
+        location.href = '/?LOGOUT=YES';
+    };
+    document.getElementById('UploadButton').onclick = function () {
+        location.href = '/?UPLOAD=YES';
+    };
+    document.getElementById('LedTestButton').onclick = function () {
+        location.href = '/?LED=YES';
+    };
+  </script>
+</form>
+<style>
+  #file-input,
+  input{
+    width:100%;
+    height:44px;
+    border-radius:4px;
+    margin:10px auto;
+    font-size:15px
+  }input{
+    background:#f1f1f1;
+    border:0;
+    padding:0 15px
+  }body{
+    background:#3498db;
+    font-family:sans-serif;
+    font-size:14px;
+    color:#777
+  }#file-input{
+    padding:0;
+    border:1px solid #ddd;
+    line-height:44px;
+    text-align:left;
+    display:block;
+    cursor:pointer
+  }#bar,#prgbar{
+    background-color:#f1f1f1;
+    border-radius:10px
+  }#bar{
+    background-color:#3498db;
+    width:0%;
+    height:10px
+  }form{
+    background:#fff;
+    max-width:258px;
+    margin:75px auto;
+    padding:30px;
+    border-radius:5px;
+    text-align:center
+  }.btn{
+    background:#3498db;
+    color:#fff;
+    cursor:pointer
+  }.btn:hover{
+    background:#20e018;
+  }.logout:hover{
+    background:#ec1f1f;
+  }
+</style>
