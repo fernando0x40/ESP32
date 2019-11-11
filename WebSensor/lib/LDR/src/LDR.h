@@ -13,12 +13,13 @@ private:
 
 public:
 
+  LDR();
   LDR(int pin, int analogMaxValue);
   ~LDR();
 
-  float get_Volt_3_3(int (*readFunction) (int));
-  float get_Volt_5(int (*readFunction) (int));
-  float get_Percent(int (*readFunction) (int));
+  float get_Volt_3_3(short unsigned int (*readFunction) (unsigned char));
+  float get_Volt_5(short unsigned int (*readFunction) (unsigned char));
+  float get_Percent(short unsigned int (*readFunction) (unsigned char));
   int get_Max_Value();
   int get_Input_Pin();
 };

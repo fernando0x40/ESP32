@@ -15,15 +15,15 @@ LDR::LDR(int pin, int analogMaxValue)
   set_Max_Value(analogMaxValue);
 }
 
-float LDR::get_Volt_3_3(int (*readFunction) (int))
+float LDR::get_Volt_3_3(short unsigned int (*readFunction) (unsigned char))
 {
   return float(100-(readFunction(this->input_Pin)*3.3/this->max_Value));
 }
-float LDR::get_Volt_5(int (*readFunction) (int))
+float LDR::get_Volt_5(short unsigned int (*readFunction) (unsigned char))
 {
   return float(100-(readFunction(this->input_Pin)*5/this->max_Value));
 }
-float LDR::get_Percent(int (*readFunction) (int))
+float LDR::get_Percent(short unsigned int (*readFunction) (unsigned char))
 {
   return float(100-(readFunction(this->input_Pin)*100/this->max_Value));
 }

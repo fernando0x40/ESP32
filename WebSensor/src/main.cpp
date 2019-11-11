@@ -1,23 +1,25 @@
 #include <Arduino.h>
+#include <LDR.h>
+
+#define LDR_Pin 4
+#define MAX_ANALOG 4095
 
 int leds[3] = {0, 16, 5};
-int LDR = 4;
+LDR *ldr;
 
 void setup() {
   // put your setup code here, to run once:
+  ldr = new LDR(LDR_Pin, MAX_ANALOG);
   Serial.begin(115200);
-  pinMode(LDR, INPUT);
+  pinMode(ldr->get_Input_Pin(), INPUT);
   for (size_t i = 0; i < sizeof(leds); i++) {
     pinMode(leds[i], OUTPUT);
     digitalWrite(leds[i], LOW);
   }
 }
 
-int LDRvalor = 0;
 void loop() {
   // put your main code here, to run repeatedly:
-  LDRvalor = analogRead(LDR);
-
-  Serial.printf("Valor do LDR = %.2f%%\n", 100-(LDRvalor*100/4095.0));
+  Serial.printf("Valor do LDR = %.2f%%\n", ldr->get_Percent(analogRead));
   delay(30);
 }
